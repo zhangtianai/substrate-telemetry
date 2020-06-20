@@ -3,7 +3,7 @@ version: "3"
 services:
   telemetry-frontend:
     build:
-      dockerfile: frontend.Dockerfile
+      dockerfile: frontend/Dockerfile
       context: ./
     # Copy in changes to the ui, so no need to rebuild the images.
     volumes:
@@ -14,7 +14,7 @@ services:
       - 3000:3000
   telemetry-backend:
     build:
-      dockerfile: backend.Dockerfile
+      dockerfile: backend/Dockerfile
       context: ./
     environment:
       - PORT=8000
