@@ -16,6 +16,11 @@ To run the backend, you will need `cargo` to build the binary. We recommend usin
 To run the frontend make sure to grab the latest stable version of node and install dependencies before doing anything:
 
 ```sh
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+nvm --version
+
+关掉当前终端并重新打开一个新的窗口，问题解决
+
 nvm install stable
 yarn
 ```
@@ -24,6 +29,9 @@ yarn
 
 ```
 cd backend
+apt-get update
+sudo apt-get install gcc -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo build --release
 ./target/release/telemetry --help
 ```
